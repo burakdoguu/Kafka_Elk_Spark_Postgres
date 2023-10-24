@@ -1,0 +1,10 @@
+apache-airflow-providers-apache-spark
+requests
+pandas
+celery
+pyspark==3.2.3
+SQLAlchemy
+wtforms
+python-decouple
+Faker
+apache-airflow-providers-elasticsearch==4.3.1

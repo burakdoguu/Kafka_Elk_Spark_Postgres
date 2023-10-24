@@ -1,0 +1,29 @@
+filebeat.inputs:
+- type: log
+  paths:
+    - /usr/share/data_logs/completed_logs/*.log 
+  enabled: true
+
+filebeat.config:
+  modules:
+    path: ${path.config}/modules.d/*.yml
+    reload.enabled: false  
+
+setup.ilm.enabled: false
+setup.template.overwrite: true
+
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+  index: "information-creation"
+
+setup.template:
+  name: 'foo'
+  pattern: 'foo-*'
+  enabled: false
+
+#processors:
+# - drop_fields:
+#     fields: ["agent","log","ecs","host","input"]  
+#
+#logging.level: debug
+#logging.to_files: false 
